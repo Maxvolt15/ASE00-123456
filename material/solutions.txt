@@ -1,0 +1,12 @@
+Your code =:= 
+[Ex 01] Link to your repo =:= 
+[Ex 05] Command to create the image =:= 
+[Ex 05] Command to execute the container =:= 
+[Ex 05] PORTS string of output of the container list =:= 
+[Ex 05] ["Config"]["Volumes"] field =:= 
+[Ex 09] Name of endpoint with the most Locust requests =:= 
+[Ex 09] Name of endpoint with the most failed Locust requests =:= 
+[Ex 09] Name of endpoint with the highest median response time =:= 
+[Ex 11] Total number of issues =:= 
+[Ex 11] Number of issues with high severity =:= 
+[Ex 12] Header "exam" value =:= 

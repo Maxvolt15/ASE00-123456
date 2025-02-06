@@ -1,12 +1,12 @@
-Your code =:= https://github.com/Maxvolt15/ASE00-123456/tree/main/material
-[Ex 01] Link to your repo =:= 
-[Ex 05] Command to create the image =:= 
-[Ex 05] Command to execute the container =:= 
-[Ex 05] PORTS string of output of the container list =:= 
-[Ex 05] ["Config"]["Volumes"] field =:= 
-[Ex 09] Name of endpoint with the most Locust requests =:= 
-[Ex 09] Name of endpoint with the most failed Locust requests =:= 
-[Ex 09] Name of endpoint with the highest median response time =:= 
-[Ex 11] Total number of issues =:= 
-[Ex 11] Number of issues with high severity =:= 
-[Ex 12] Header "exam" value =:= 
+Your code =:= 123456
+[Ex 01] Link to your repo =:= https://github.com/Maxvolt15/ASE00-123456/tree/main/material
+[Ex 05] Command to create the image =:= docker build -t mockex .
+[Ex 05] Command to execute the container =:= docker run -p 5002:5001 --name mockexcont mockex
+[Ex 05] PORTS string of output of the container list =:= 0.0.0.0:5002->5001/tcp
+[Ex 05] ["Config"]["Volumes"] field =:= null
+[Ex 09] Name of endpoint with the most Locust requests =:= mio
+[Ex 09] Name of endpoint with the most failed Locust requests =:= yui
+[Ex 09] Name of endpoint with the highest median response time =:= azusa
+[Ex 11] Total number of issues =:= 2
+[Ex 11] Number of issues with high severity =:= 1
+[Ex 12] Header "exam" value =:= 0654321

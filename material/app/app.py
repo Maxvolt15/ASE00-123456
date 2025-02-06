@@ -72,3 +72,50 @@ def get_secret():
     return create_secret(X,response)
 
 #add your route here
+
+@app.route('/ex1', methods=['GET'])
+def ex1():
+    X = request.args.get('a', type = str)
+    D=0
+    C=0
+    for c in X:
+        if c.isdigit():
+            D+=1
+        elif c.isalpha():
+            C+=1
+
+    if D == 0 or C == 0:
+        return make_response(jsonify(s="invalid Input"),400)
+    return make_response(jsonify(s=D//C),200)
+
+# from flask import Flask, request, jsonify
+
+# app = Flask(__name__)
+
+# @app.route('/ex1', methods=['GET'])
+# def ex1():
+#     # Get the query parameter 'a' from the request
+#     X = request.args.get('a', type=str)
+
+#     # If 'a' is not provided or is empty, return 400 with "Invalid Input"
+#     if not X:
+#         return jsonify(s="Invalid Input"), 400
+
+#     # Count the number of digits (D) and alphabetic characters (C) in X
+#     D = sum(c.isdigit() for c in X)  # Count digits
+#     C = sum(c.isalpha() for c in X)  # Count alphabetic characters
+
+#     # Check if the operation can be performed:
+#     # - At least one digit must be present (D > 0)
+#     # - Avoid division by zero (C > 0)
+#     if D == 0 or C == 0:
+#         return jsonify(s="Invalid Input"), 400
+
+#     # Perform integer division D // C
+#     result = D // C
+
+#     # Return the result in JSON format with HTTP status 200
+#     return jsonify(s=result), 200
+
+# if __name__ == '__main__':
+#     app.run(host='0.0.0.0', port=5001)

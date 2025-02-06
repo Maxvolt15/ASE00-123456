@@ -1,0 +1,68 @@
+# version: "3"
+
+# services:
+#   app:
+#     container_name: app-container
+#     build:
+#       context: ./app  
+#       dockerfile: Dockerfile
+#     ports:
+#       - "8089:5009"
+#     secrets:
+#       - asecert.pem
+#       - asekey.pem
+#     command: >
+#       flask run --host=0.0.0.0 --port=5009
+#       --cert=/run/secrets/asecert.pem
+#       --key=/run/secrets/asekey.pem
+
+#   locust:
+#     container_name: locust-container
+#     build:
+#       context: .
+#       dockerfile: Dockerfile.locust
+#     ports:
+#       - "8090:8089"
+#     depends_on:
+#       - app
+
+# secrets:
+#   asecert.pem:
+#     file: ./app/asecert.pem
+#   asekey.pem:
+#     file: ./app/asekey.pem
+
+version: '3'
+
+services:
+  ex1:
+    container_name: ex1-container
+    build:
+       context: ./app  
+       dockerfile: Dockerfile
+    ports:
+      - "8089:5001"
+    secrets:
+      - asecert.pem
+      - asekey.pem
+    command: >
+      flask run --host=0.0.0.0 --port=8089 
+      --cert=/run/secrets/asecert.pem 
+      --key=/run/secrets/asekey.pem
+
+  locust:
+    container_name: locust-container
+    build:
+      context: .
+      dockerfile: Dockerfile.locust
+    ports:
+      - "8090:8089"
+    command: locust -f /locustfile.py 
+    depends_on:
+      - ex1
+
+secrets:
+  asecert.pem:
+    file: ./app/asecert.pem
+  asekey.pem:
+    file: ./app/asekey.pem
